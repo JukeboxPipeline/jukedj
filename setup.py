@@ -39,7 +39,7 @@ with open(initfile) as fp:
     exec(fp.read(), about)
 
 long_description = read('README.rst', 'HISTORY.rst')
-install_requires = []
+install_requires = ['django>=1.7']
 tests_require = ['pytest']
 
 
