@@ -160,7 +160,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('file_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='jukedj.File')),
                 ('version', models.IntegerField(default=1)),
-                ('releasetype', models.CharField(max_length=7, choices=[(b'release', b'release file'), (b'work', b'work file'), (b'handoff', b'handoff file')])),
+                ('releasetype', models.CharField(max_length=20)),
                 ('descriptor', models.TextField(null=True, blank=True)),
                 ('typ', models.TextField(default=None)),
                 ('task', models.ForeignKey(to='jukedj.Task')),
