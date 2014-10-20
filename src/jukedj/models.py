@@ -14,6 +14,8 @@ from jukedj import validators
 
 log = logging.getLogger(__name__)
 
+# this could be solved by entry points to move these variables
+# out of this app
 GLOBAL_NAME = 'Global'
 """Name for global shots and sequences"""
 
@@ -36,34 +38,6 @@ DEFAULT_DEPARTMENTS = [('Modeling', 'mod', 100, True),
                        ('Grading', 'grd', 600, False)]
 """Tuples with name, short, ordervalue and assetflag for the default departments.
 Every project will get these departments by default.
-"""
-
-#TODO MOVE TO JUKEBOX-CORE
-RTYP_CHOICES = {
-    'release':('release', 'release file'),
-    'work':('work', 'work file'),
-    'handoff':('handoff', 'handoff file'),
-}
-"""Releasetype values for the different releasetypes
-
-the values consist of tuples with the actual name and a description.
-"""
-
-
-#TODO MOVE TO JUKEBOX-CORE
-FILETYPES = {
-    'mayamainscene': 'mayamainscene'
-}
-"""A dict for file types that can be used in a TaskFile
-
-the values are the actual data that gets stored in the database.
-
-Explanations:
-
-  :mayamainscene: probably the most common for maya scenes. these are the usual release and workfiles
-                  maybe even a handoff file, if it does not need a direct subfolder.
-                  Main scenes hold the main information, not just extracted parts.
-                  If you export shader or maybe some blendshapes in a scene, do not use this one.
 """
 
 
@@ -375,7 +349,7 @@ class TaskFile(File):
     """Model for a file that belongs to a specific task"""
     task = models.ForeignKey(Task)
     version = models.IntegerField(default=1)
-    releasetype = models.CharField(max_length=7, choices=RTYP_CHOICES.values())
+    releasetype = models.CharField(max_length=20)
     descriptor = models.TextField(null=True, blank=True)
     typ = models.TextField(default=None)
 
