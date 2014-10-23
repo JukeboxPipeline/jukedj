@@ -8,7 +8,7 @@ History
 
 * Migration of old project
 
-1.2.0 (2014-10-23)
+1.1.1 (2014-10-23)
 +++++++++++++++++++++++++++++++++++++++
 
 * First release on PyPI
