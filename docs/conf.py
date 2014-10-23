@@ -20,6 +20,7 @@ import sys
 #sys.path.insert(0, os.path.abspath('..'))
 thisdir = os.path.abspath(os.path.dirname(__file__))
 sys.path.insert(0, os.path.abspath(os.path.join(thisdir, '../src')))
+sys.path.append(thisdir)
 
 # -- General configuration -----------------------------------------------------
 
@@ -271,9 +272,13 @@ autodoc_default_flags = ['members', 'undoc-members', 'show-inheritance']
 
 
 # -- Intersphinx Config ---------------------------------------------------
-intersphinx_mapping = {'python': ('http://docs.python.org/2.7', None),
+intersphinx_mapping = {'python': ('https://docs.python.org/2.7', None),
                        'pyside': ('https://deptinfo-ensip.univ-poitiers.fr/ENS/pyside-docs/', None)}
+					   
 
+# -- For autodoc to make modules importable -------------------------------
+
+os.environ["DJANGO_SETTINGS_MODULE"] = 'dummy_settings'
 
 # if sphinx-build is running, do updatedoc to have a fresh apidoc
 if 'sphinx-build' in sys.argv[0].lower():
