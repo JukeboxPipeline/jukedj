@@ -9,7 +9,7 @@ To get started:
   1. Clone the repository
   2. Install the package in development mode::
 
-    $ pip install -e path/to/repository
+      $ pip install -e path/to/repository
 
   3. Create a test django project and add jukedj to the installed apps.
   4. Develop jukedj, write tests and commit your changes.
