@@ -66,7 +66,7 @@ class Project(models.Model):
     semester = models.CharField(max_length=50)
     framerate = models.FloatField(default=25)
     resx = models.IntegerField(verbose_name='horizontal resolution', default=1920)
-    resy = models.IntegerField(verbose_name='vertical resolution', default=1020)
+    resy = models.IntegerField(verbose_name='vertical resolution', default=1080)
     scale = models.CharField(max_length=50, verbose_name='the maya scene scale', default='m')
     status = models.CharField(max_length=50, default='New')
     users = models.ManyToManyField(User, null=True, blank=True)
