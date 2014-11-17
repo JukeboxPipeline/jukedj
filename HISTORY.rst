@@ -12,3 +12,8 @@ History
 +++++++++++++++++++++++++++++++++++++++
 
 * First release on PyPI
+
+2.0.0 (2014-11-17)
++++++++++++++++++++++++++++++++++++++++
+
+* Assets can be connected to each other.
