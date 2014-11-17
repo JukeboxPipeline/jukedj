@@ -225,6 +225,7 @@ class Asset(models.Model):
     description = models.TextField(default="", blank=True)
     tasks = GenericRelation(Task)
     #thumbnail = models.ImageField(max_length=510, null=True, blank=True)
+    assets = models.ManyToManyField("self", symmetrical=False) # adds asset_set as related name
 
     class Meta:
         unique_together=(("project", "atype", "name"))
