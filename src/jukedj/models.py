@@ -79,7 +79,10 @@ class Project(models.Model):
         :rtype: str
         :raises: None
         """
-        return os.path.normpath(self._path)
+        p = os.path.normpath(self._path)
+        if p.endswith(':'):
+            p = p + posixpath.sep
+        return p
 
     @path.setter
     def path(self, value):
@@ -91,6 +94,8 @@ class Project(models.Model):
         """
         prepval = value.replace('\\', '/')
         self._path = posixpath.normpath(prepval)
+        if self._path.endswith(':'):
+            self._path = self._path + posixpath.sep
 
     @property
     def globalseq(self):
