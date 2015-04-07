@@ -81,7 +81,7 @@ class Project(models.Model):
         """
         p = os.path.normpath(self._path)
         if p.endswith(':'):
-            p = p + posixpath.sep
+            p = p + os.path.sep
         return p
 
     @path.setter

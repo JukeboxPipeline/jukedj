@@ -1,3 +1,3 @@
 __author__ = 'David Zuber'
 __email__ = 'zuber.david@gmx.de'
-__version__ = '2.0.1'
+__version__ = '2.0.2'
